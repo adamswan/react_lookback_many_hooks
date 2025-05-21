@@ -3,13 +3,16 @@ import { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
 
-  function handleClick() {
-    setCount(count + 1);
+  console.log("组件渲染了");
 
-    // 2s 后，将回调放入队列中排队！
-    setTimeout(() => {
-      console.log("打印count", count);
-    }, 1000);
+  function handleClick() {
+    // setCount(count + 1);
+    // setCount(count + 1);
+    // setCount(count + 1);
+
+    setCount((old) => old + 1);
+    setCount((old) => old + 1);
+    setCount((old) => old + 1);
   }
 
   return (
